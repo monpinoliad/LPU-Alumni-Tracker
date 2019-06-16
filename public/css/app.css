@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap);html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+::before,
+::after,
+* {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: 2pt dashed #292929;
+}
+
