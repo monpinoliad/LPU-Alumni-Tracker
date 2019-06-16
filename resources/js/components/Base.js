@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Landing from './Landing';
 
-export default class Base extends Component {
+class Base extends Component {
     render() {
         return (
             <div className="Base">
-
+                <Landing />
             </div>
         );
     }
 }
+
+export default Base;
 
 if (document.getElementById('base')) {
     ReactDOM.render(<Base />, document.getElementById('base'));
