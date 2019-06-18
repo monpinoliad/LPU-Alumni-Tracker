@@ -1,0 +1,17 @@
+.input-group {
+  margin: 10pt 0;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10pt;
+  margin: 5pt 0;
+  font-size: 1rem;
+  border: 1pt solid $cardinal;
+  @include border-radius(20pt);
+
+  &:focus {
+    outline: none;
+    @include box-shadow(0 0 7.5pt -1pt $cardinal);
+  }
+}

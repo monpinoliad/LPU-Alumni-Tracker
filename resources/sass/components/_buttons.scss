@@ -1,0 +1,12 @@
+.login-btn {
+  background-color: $cardinal;
+  width: 100%;
+  padding: 10pt;
+  margin: 5pt 0;
+  color: $white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  @include border-radius(20pt);
+  @include box-shadow(0 15pt 20pt -12.5pt $cardinal);
+}

@@ -3,3 +3,15 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+@mixin border-radius($size) {
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  border-radius: $size;
+}
+
+@mixin box-shadow($settings) {
+  -webkit-box-shadow: $settings;
+  -moz-box-shadow: $settings;
+  box-shadow: $settings;
+}

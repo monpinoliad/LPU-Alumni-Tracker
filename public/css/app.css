@@ -6,6 +6,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 500;
+  line-height: 1.5;
   padding: 0;
   margin: 0;
 }
@@ -18,5 +19,95 @@ body {
 
 :focus {
   outline: 2pt dashed #292929;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0 0 2.5pt 0;
+  border-bottom: 1pt dashed #292929;
+}
+
+.input-group {
+  margin: 10pt 0;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10pt;
+  margin: 5pt 0;
+  font-size: 1rem;
+  border: 1pt solid #cd232b;
+  border-radius: 20pt;
+}
+
+.login-input:focus {
+  outline: none;
+  box-shadow: 0 0 7.5pt -1pt #cd232b;
+}
+
+.login-btn {
+  background-color: #cd232b;
+  width: 100%;
+  padding: 10pt;
+  margin: 5pt 0;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 20pt;
+  box-shadow: 0 15pt 20pt -12.5pt #cd232b;
+}
+
+.login {
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.login__background {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  width: 65vw;
+  height: 100vh;
+}
+
+.login__sidebar {
+  position: absolute;
+  display: block;
+  background-color: white;
+  width: 35vw;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 35pt 50pt;
+}
+
+.login__sidebar > h1 {
+  margin: 0;
+  padding: 0 0 10pt 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.login__sidebar > p {
+  margin: 20pt 0;
+}
+
+.login__sidebar--information {
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 20pt 0;
+}
+
+.login__sidebar--information > span {
+  padding: 0 5pt;
 }
 

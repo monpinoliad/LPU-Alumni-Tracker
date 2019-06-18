@@ -5,6 +5,7 @@ html, body {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 500;
+  line-height: 1.5;
   padding: 0;
   margin: 0;
 }
@@ -17,4 +18,11 @@ html, body {
 
 :focus {
   outline: 2pt dashed $mine-shaft;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0 0 2.5pt 0;
+  border-bottom: 1pt dashed $mine-shaft;
 }
