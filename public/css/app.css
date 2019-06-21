@@ -39,11 +39,11 @@ a {
   font-size: 1rem;
   border: 1pt solid #cd232b;
   border-radius: 20pt;
+  box-shadow: 0 10pt 15pt -15pt #cd232b;
 }
 
 .login-input:focus {
   outline: none;
-  box-shadow: 0 0 7.5pt -1pt #cd232b;
 }
 
 .login-btn {
@@ -57,6 +57,11 @@ a {
   cursor: pointer;
   border-radius: 20pt;
   box-shadow: 0 15pt 20pt -12.5pt #cd232b;
+}
+
+.login-btn :active,
+.login-btn :focus {
+  outline: none;
 }
 
 .login {

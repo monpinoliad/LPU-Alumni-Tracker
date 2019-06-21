@@ -9,4 +9,9 @@
   cursor: pointer;
   @include border-radius(20pt);
   @include box-shadow(0 15pt 20pt -12.5pt $cardinal);
+
+  :active,
+  :focus {
+    outline: none;
+  }
 }

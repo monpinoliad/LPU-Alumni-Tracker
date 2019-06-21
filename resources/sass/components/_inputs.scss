@@ -9,9 +9,9 @@
   font-size: 1rem;
   border: 1pt solid $cardinal;
   @include border-radius(20pt);
+  @include box-shadow(0 10pt 15pt -15pt $cardinal);
 
   &:focus {
     outline: none;
-    @include box-shadow(0 0 7.5pt -1pt $cardinal);
   }
 }

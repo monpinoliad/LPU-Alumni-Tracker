@@ -1,7 +1,40 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import {PostData} from '../services/PostData';
 
 class Base extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: '',
+        };
+
+        this.login = this.login.bind(this);
+        this.inputChange = this.inputChange.bind(this);
+    }
+
+    login(e) {
+        e.preventDefault();
+        PostData('login', this.state).then(result => {
+            console.log(result.data.credential);
+            console.log(localStorage.getItem('userToken'));
+            // if(result.data.credential) {
+            //     console.log("true");
+            // } else {
+            //     console.log("Hi");
+            // }
+        });
+    }
+
+    inputChange(e) {
+        this.setState(
+            {
+                [e.target.name]: e.target.value
+            }
+        );
+    }
+
     render() {
         return (
             <div className="Base">
@@ -10,24 +43,38 @@ class Base extends Component {
                     <div className="login__sidebar">
                         <h1>Sign In</h1>
                         <p>Connect with other Alumni Lyceans and get updated to the latest event of LPU!</p>
-                        <form>
-                            <div className="input-group">
-                                <label>
-                                    Username:
-                                    <input type="text" className="login-input" value="{{ old('email') }}" placeholder="Username" />
-                                </label>
-                            </div>
-                            <div className="input-group">
-                                <label>
-                                    Password:
-                                    <input type="password" className="login-input" placeholder="Password" />
-                                </label>
-                            </div>
-                            <button type="submit" className="login-btn">Login</button>
-                            <div className="login__sidebar--information">
-                                <a href="/">Forgot your password?</a><span>|</span><a href="/">Register your ID</a>
-                            </div>
-                        </form>
+                        <div className="input-group">
+                            <label>
+                                Username:
+                                <input
+                                    type="text"
+                                    name="username"
+                                    className="login-input"
+                                    placeholder="Username"
+                                    onChange={this.inputChange}
+                                />
+                            </label>
+                        </div>
+                        <div className="input-group">
+                            <label>
+                                Password:
+                                <input
+                                    type="password"
+                                    name="password"
+                                    className="login-input"
+                                    placeholder="Password"
+                                    onChange={this.inputChange}
+                                />
+                            </label>
+                        </div>
+                        <button
+                            type="submit"
+                            className="login-btn"
+                            onClick={this.login}
+                        >Login</button>
+                        <div className="login__sidebar--information">
+                            <a href="/">Forgot your password?</a><span>|</span><a href="/">Register your ID</a>
+                        </div>
                     </div>
                 </div>
             </div>
