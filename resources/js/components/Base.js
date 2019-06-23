@@ -17,13 +17,10 @@ class Base extends Component {
     login(e) {
         e.preventDefault();
         PostData('login', this.state).then(result => {
-            console.log(result.data.credential);
             console.log(localStorage.getItem('userToken'));
-            // if(result.data.credential) {
-            //     console.log("true");
-            // } else {
-            //     console.log("Hi");
-            // }
+            if(result) {
+                this.props.history.push('/feed');
+            }
         });
     }
 

@@ -1,0 +1,181 @@
+.Feed {
+  position: relative;
+  background-color: $gallery;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20pt 220pt 0 270pt;
+
+  &__container {
+    background-color: $white;
+    width: 100%;
+    overflow: auto;
+    padding: 20pt;
+
+    & > h1 {
+      font-size: 1rem;
+      padding: 5pt 0;
+      margin: 0;
+      border-bottom: 1pt solid $silver;
+    }
+
+    &--share {
+      overflow: auto;
+      position: relative;
+      border-bottom: 1pt solid $gray;
+
+      & > a {
+        font-size: 1.5rem;
+        border: none;
+        padding: 0 5pt;
+
+        &:hover {
+          color: $matisse;
+        }
+      }
+    }
+
+    &--post {
+      width: 100%;
+      height: auto;
+      margin: 10pt 0;
+      position: relative;
+
+      & > .options {
+        position: absolute;
+        top: 0;
+        right: 10pt;
+        font-size: 1.25rem;
+        cursor: pointer;
+      }
+
+      &__profile {
+        display: inline-block;
+
+        &--image {
+          background-color: $gallery;
+          width: 40pt;
+          height: 40pt;
+          float: left;
+          @include border-radius(50%);
+        }
+
+        &--information {
+          padding: 0 15pt;
+          float: left;
+
+          & > h1 {
+            padding: 0;
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 700;
+          }
+
+          & > h2 {
+            padding: 0;
+            margin: 0;
+            font-weight: 500;
+            font-size: 0.75rem;
+            font-style: italic;
+          }
+
+          & > span {
+            font-size: 0.7rem;
+          }
+        }
+      }
+
+      &__content {
+        width: 100%;
+        height: auto;
+        padding: 5pt 0;
+        border-bottom: 1pt solid $gallery;
+
+        & > p {
+          font-size: 0.90rem;
+          line-height: 1.5;
+        }
+      }
+
+      &__comment {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+
+        & > h1 {
+          padding-top: 10pt;
+          margin: 0;
+          font-size: 1rem;
+          font-weight: 700;
+        }
+
+        &--contents {
+          width: 100%;
+          padding: 10pt 0;
+
+          .comment {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            &__image {
+              background-color: $gallery;
+              max-width: 30pt;
+              max-height: 30pt;
+              margin-right: 10pt;
+              flex: 1 0 30pt;
+              @include border-radius(50%);
+            }
+
+            &__content {
+              position: relative;
+              background-color: $concrete;
+              padding: 10pt 20pt;
+              flex: 1;
+              font-size: 0.9rem;
+              @include border-radius(20pt);
+
+              &--options {
+                position: absolute;
+                top: 5pt;
+                right: 15pt;
+                font-size: 1.25rem;
+                cursor: pointer;
+              }
+
+              &--profile {
+                width: 100%;
+
+                & > h1 {
+                  padding: 0;
+                  margin: 0;
+                  font-size: 0.9rem;
+                  font-weight: 700;
+                }
+
+                & > span {
+                  font-size: 0.7rem;
+                  float: left;
+                }
+              }
+
+              & > p {
+                padding: 10pt 0;
+              }
+
+              &--interactions {
+                width: 100%;
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

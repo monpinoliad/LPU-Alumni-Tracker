@@ -26772,6 +26772,8 @@ module.exports = g;
 
 __webpack_require__(/*! ./components/Base */ "./resources/js/components/Base.js");
 
+__webpack_require__(/*! ./components/Feed */ "./resources/js/components/Feed.js");
+
 /***/ }),
 
 /***/ "./resources/js/components/Base.js":
@@ -26835,14 +26837,15 @@ function (_Component) {
   _createClass(Base, [{
     key: "login",
     value: function login(e) {
+      var _this2 = this;
+
       e.preventDefault();
       Object(_services_PostData__WEBPACK_IMPORTED_MODULE_2__["PostData"])('login', this.state).then(function (result) {
-        console.log(result.data.credential);
-        console.log(localStorage.getItem('userToken')); // if(result.data.credential) {
-        //     console.log("true");
-        // } else {
-        //     console.log("Hi");
-        // }
+        console.log(localStorage.getItem('userToken'));
+
+        if (result) {
+          _this2.props.history.push('/feed');
+        }
       });
     }
   }, {
@@ -26901,6 +26904,271 @@ function (_Component) {
 
 if (document.getElementById('base')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Base, null), document.getElementById('base'));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Contents.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Contents.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Contents =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Contents, _Component);
+
+  function Contents() {
+    _classCallCheck(this, Contents);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Contents).apply(this, arguments));
+  }
+
+  _createClass(Contents, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Contents"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Newsfeed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post__profile"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post__profile--image"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post__profile--information"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Sholomon Pinoliad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Full-stack Web Developer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "24 mins"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "options"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-caret-down"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post__content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's not a common thing to see women in tech, and have the desire to build a community in Indonesia. Shout-out to our newest addition to #Google #Developer Group Cloud Jakarta chapter, Tiffany Adriana in hosting her first Cloud Next Extended event, and happy to see Prasetyo Andy Wicaksono and Yuandra Ismiraldi back in action. It's really nice to see the journey of Andri Suranta Ginting from being a Developer Student Club lead, to joining us in building an even larger tech community. \uD83D\uDE0A", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "We have a lively discussion during Q&A session with startups and young engineers about topics ranging from AI/ML to Data discovery tools. Thank you to the awesome speakers for such an insightful session Jerome Poudevigne Ralph Vincent Regalado Albert Widiatmoko Renata Clara Kumala Stewart Jingga Imre Nagi Yuandra Ismiraldi!", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "#nextextended19 #gdgcloudjakarta")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post__comment"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Comments"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "comment-area",
+        placeholder: "Add a comment..."
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "comment-btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-arrow-right"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post__comment--contents"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment__image"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment__content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment__content--options"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-caret-down"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment__content--profile"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Sholomon Pinoliad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "25 mins")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello world"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment__content--interactions"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-heart"
+      }))))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Newsfeed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post__profile"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post__profile--image"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post__profile--information"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Sholomon Pinoliad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Full-stack Web Developer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "24 mins"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "options"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-caret-down"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--post__content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's not a common thing to see women in tech, and have the desire to build a community in Indonesia. Shout-out to our newest addition to #Google #Developer Group Cloud Jakarta chapter, Tiffany Adriana in hosting her first Cloud Next Extended event, and happy to see Prasetyo Andy Wicaksono and Yuandra Ismiraldi back in action. It's really nice to see the journey of Andri Suranta Ginting from being a Developer Student Club lead, to joining us in building an even larger tech community. \uD83D\uDE0A", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "We have a lively discussion during Q&A session with startups and young engineers about topics ranging from AI/ML to Data discovery tools. Thank you to the awesome speakers for such an insightful session Jerome Poudevigne Ralph Vincent Regalado Albert Widiatmoko Renata Clara Kumala Stewart Jingga Imre Nagi Yuandra Ismiraldi!", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "#nextextended19 #gdgcloudjakarta"))))));
+    }
+  }]);
+
+  return Contents;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Contents);
+
+/***/ }),
+
+/***/ "./resources/js/components/Feed.js":
+/*!*****************************************!*\
+  !*** ./resources/js/components/Feed.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Contents__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Contents */ "./resources/js/components/Contents.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var Feed =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Feed, _Component);
+
+  function Feed() {
+    _classCallCheck(this, Feed);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Feed).apply(this, arguments));
+  }
+
+  _createClass(Feed, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Feed"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "sidebar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sidebar__profile"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sidebar__profile--image"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sidebar__profile--information"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Sholomon Pinoliad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Web Developer")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "sidebar__navigation"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/feed"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "active"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-home"
+      }), " Newsfeed")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-user-circle"
+      }), " Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-sticky-note"
+      }), " Messages"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "sidebar__bottom-navigation"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-sign-out-alt"
+      }), " Logout")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-cog"
+      }), " Settings")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper__container--share"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-area",
+        contenteditable: "true",
+        placeholder: "Share your story"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "post-btn"
+      }, "Share"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-camera-retro"
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Contents__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "infobar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Discover"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "infobar__discover"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "#LPUAlumni2019"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "200 posts about this"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "#Alumni"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "50 posts about this"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "#Laban"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "200 posts about this")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "infobar__about"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "infobar__about--copy"
+      }, "\xA9 Copyright 2019"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Terms"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Cookies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Privacy Policy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, "Contact Us"))));
+    }
+  }]);
+
+  return Feed;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Feed);
+
+if (document.getElementById('feed')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Feed, null), document.getElementById('feed'));
 }
 
 /***/ }),

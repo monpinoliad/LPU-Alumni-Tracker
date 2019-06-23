@@ -15,3 +15,56 @@
     outline: none;
   }
 }
+
+.post-btn {
+  position: absolute;
+  background-color: $denim;
+  width: auto;
+  padding: 10pt 20pt;
+  margin: 5pt 0;
+  color: $white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  bottom: 5pt;
+  right: 15pt;
+  @include border-radius(20pt);
+
+  &:hover {
+    background-color: $matisse;
+  }
+
+  &:active {
+    background-color: $eden;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.comment-btn {
+  position: absolute;
+  background-color: $denim;
+  width: 25pt;
+  height: 25pt;
+  color: $white;
+  padding: 5pt;
+  top: 43pt;
+  right: 10pt;
+  border: none;
+  cursor: pointer;
+  @include border-radius(50%);
+
+  &:hover {
+    background-color: $matisse;
+  }
+
+  &:active {
+    background-color: $eden;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

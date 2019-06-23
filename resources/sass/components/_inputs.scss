@@ -15,3 +15,41 @@
     outline: none;
   }
 }
+
+.post-area {
+  background-color: $white;
+  width: 100%;
+  height: auto;
+    min-height: 80pt;
+
+  word-wrap: break-word;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+
+  border: none;
+  padding: 10pt 100pt 10pt 10pt;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:empty::before {
+    content: attr(placeholder);
+    color: $silver;
+  }
+}
+
+.comment-area {
+  background-color: $white;
+  width: 100%;
+  font-size: 1rem;
+  padding: 10pt 40pt 10pt 10pt;
+  margin: 10pt 0;
+  border: 1pt solid $silver;
+  @include border-radius(20pt);
+
+  &:focus {
+    outline: none;
+  }
+}

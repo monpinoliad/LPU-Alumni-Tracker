@@ -1,0 +1,205 @@
+.sidebar {
+  position: fixed;
+  background-color: $white;
+  width: 250pt;
+  height: 100%;
+  padding: 20pt;
+  z-index: 999;
+
+  & > a {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__profile {
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 20pt;
+    border-bottom: 1pt solid $gallery;
+
+    &--image {
+      background-color: $gallery;
+      width: 40pt;
+      height: 40pt;
+      float: left;
+
+      @include border-radius(50%);
+    }
+
+    &--information {
+      padding-left: 15pt;
+      float: left;
+
+      & > h1 {
+        padding-top: 5pt;
+        margin: 0;
+        font-size: 0.90rem;
+        font-weight: 700;
+      }
+
+      & > h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 0.75rem;
+        font-weight: 500;
+        font-style: italic;
+      }
+    }
+  }
+
+  &__navigation {
+    width: 100%;
+    padding: 0 10pt;
+    margin: 20pt 0;
+    list-style: none;
+    list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+
+    & > a:focus {
+      outline: none;
+    }
+
+    li {
+      width: 100%;
+      color: $mine-shaft;
+      padding: 10pt 0;
+      float: left;
+
+      &:hover {
+        color: $cardinal;
+      }
+
+      i {
+        padding-right: 10pt;
+      }
+    }
+
+    .active {
+      color: $cardinal;
+    }
+  }
+
+  &__bottom-navigation {
+    position: absolute;
+    width: 100%;
+    padding: 15pt 30pt;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    list-style: none;
+    list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+
+    & > a:focus {
+      outline: none;
+    }
+
+    li {
+      width: 100%;
+      color: $mine-shaft;
+      padding: 5pt 0;
+      float: left;
+
+      &:hover {
+        color: $cardinal;
+      }
+
+      i {
+        padding-right: 10pt;
+      }
+    }
+
+    .active {
+      color: $cardinal;
+    }
+  }
+}
+
+.infobar {
+  position: fixed;
+  background-color: $white;
+  width: 200pt;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  & > h1 {
+    padding: 10pt 20pt;
+    margin: 0;
+    font-size: 1.25rem;
+    border-bottom: 1pt solid $gallery;
+  }
+
+  &__discover {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+
+    & > a:focus {
+      outline: none;
+    }
+
+    li {
+      background-color: $white;
+      width: 100%;
+      padding: 10pt 20pt;
+      border-bottom: 1pt solid $gallery;
+      float: left;
+
+      &:hover {
+        background-color: $concrete;
+      }
+
+      & > h1 {
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+
+      & > h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 0.75rem;
+        font-weight: 500;
+        font-style: italic;
+      }
+    }
+  }
+
+  &__about {
+    position: absolute;
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 15pt 30pt;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &--copy {
+      padding: 5pt 0;
+      text-align: center;
+    }
+
+    & > a {
+      padding-right: 5pt;
+      margin: 0;
+      border: none;
+
+      &:focus {
+        outline: none
+      }
+
+      &:hover {
+        color: $cardinal;
+      }
+    }
+  }
+}
